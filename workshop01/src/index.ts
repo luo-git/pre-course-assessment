@@ -9,7 +9,7 @@ app.engine("handlebars", engine());
 app.set("view engine", "handlebars");
 app.set("views", "src/views");
 
-app.use('/public', express.static('src/public'))
+app.use("/public", express.static("src/public"));
 
 app.get("/", (req, res) => {
   const message = getRandomChoice([
@@ -22,4 +22,4 @@ app.get("/", (req, res) => {
   res.render("home", { message });
 });
 
-app.listen(80);
+app.listen(3000, "0.0.0.0", () => console.log("Listening on port 3000"));
